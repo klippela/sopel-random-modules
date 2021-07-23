@@ -14,12 +14,12 @@ def find_coin_name(s):
             return coin
 
 # Commands
-@sopel.module.commands('crypto')
-@sopel.module.example('.crypto [bitcoin(,ethereum,...)]')
+@sopel.module.commands('krypto')
+@sopel.module.example('.krypto [bitcoin(,ethereum,...)]')
 def crypto(bot, trigger):
     # No argument, display default list
     if trigger.group(2) == None:
-        defaults = ['bitcoin','ethereum','polkadot','cardano']
+        defaults = ['bitcoin','ethereum','doge','cardano']
         res = cg.get_price(ids=defaults, vs_currencies='usd')
         output = ""
         for coin in res:
